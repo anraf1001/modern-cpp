@@ -4,7 +4,9 @@
 
 class Square : public Rectangle {
 public:
-    using Rectangle::Rectangle;
+    // using Rectangle::Rectangle;
+    explicit Square(Color color)
+        : Rectangle(color) {}
     Square(double x);
     Square(const Square& other);
 
