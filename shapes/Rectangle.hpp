@@ -2,11 +2,11 @@
 
 #include "Shape.hpp"
 
-class Rectangle : public Shape
-{
+class Rectangle : public Shape {
 public:
+    using Shape::Shape;
     Rectangle(double x, double y);
-    Rectangle(const Rectangle & other);
+    Rectangle(const Rectangle& other);
 
     double getArea() const;
     double getPerimeter() const;
@@ -17,6 +17,6 @@ public:
 private:
     Rectangle();
 
-    double x_;
-    double y_;
+    double x_{};
+    double y_{};
 };

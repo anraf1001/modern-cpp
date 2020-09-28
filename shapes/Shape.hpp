@@ -8,6 +8,9 @@ enum class Color : unsigned char {
 
 class Shape {
 public:
+    Shape() = default;
+    explicit Shape(Color color)
+        : color_(color) {}
     virtual ~Shape() {}
 
     virtual double getArea() const = 0;
