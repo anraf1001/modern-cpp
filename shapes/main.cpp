@@ -79,9 +79,9 @@ int main() {
     findFirstShapeMatchingPredicate(shapes, perimeterBiggerThan20, "perimeter bigger than 20");
     findFirstShapeMatchingPredicate(shapes, areaLessThan10, "area less than 10");
 
-    Circle circle(Color::Red);
-    Rectangle rect(Color::Blue);
-    Square sq(Color::Green);
+    Circle circle{Color::Red};
+    Rectangle rect{Color::Blue};
+    Square sq{Color::Green};
 
     return 0;
 }
