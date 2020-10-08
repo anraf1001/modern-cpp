@@ -2,19 +2,21 @@
 
 #include "Shape.hpp"
 
-class Circle : public Shape {
+class Circle final : public Shape {
 public:
     using Shape::Shape;
     Circle(double r);
-    Circle(const Circle& other);
+    Circle(const Circle& other) = default;
 
-    double getArea() const;
-    double getPerimeter() const;
+    [[deprecated("PI is deprecated")]] double getPI() const;
+
+    double getArea() const override;
+    double getPerimeter() const override;
     double getRadius() const;
-    void print() const;
+    void print() const override;
 
 private:
-    Circle();  // doesn't allow to call default constructor
+    Circle() = delete;  // doesn't allow to call default constructor
 
     double r_{};
 };

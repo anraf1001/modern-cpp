@@ -4,17 +4,16 @@
 
 class Square : public Rectangle {
 public:
-    // using Rectangle::Rectangle;
+    Square() = default;
     explicit Square(Color color)
         : Rectangle(color) {}
     Square(double x);
-    Square(const Square& other);
+    Square(const Square& other) = default;
 
-    double getArea();
-    double getPerimeter();
-    void print();
+    double getArea() const noexcept override;
+    double getPerimeter() const noexcept override;
+    void print() const override;
 
 private:
-    double getY();  // should not have Y dimension
-    Square();
+    double getY() = delete;  // should not have Y dimension
 };

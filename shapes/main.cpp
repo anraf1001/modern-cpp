@@ -54,6 +54,10 @@ void findFirstShapeMatchingPredicate(const Collection& collection,
     }
 }
 
+constexpr int fibo(int num) {
+    return num <= 2 ? 1 : fibo(num - 1) + fibo(num - 2);
+}
+
 int main() {
     Collection shapes{make_shared<Circle>(2.0),
                       make_shared<Circle>(3.0),
@@ -82,6 +86,9 @@ int main() {
     Circle circle{Color::Red};
     Rectangle rect{Color::Blue};
     Square sq{Color::Green};
+
+    constexpr int i = fibo(25);
+    std::cout << "Fibo: " << i << '\n';
 
     return 0;
 }
